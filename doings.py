@@ -1,4 +1,5 @@
 student = {}
+import json
 
 def show_menu():
      print("------marks tracker--------")
@@ -38,7 +39,18 @@ while True:
           break
      else:
           print("invalid option")
-          
+
+ save_data():
+    with open("students.json", "w") as file:
+        json.dump(student, file, indent=4)
+        print("Data saved successfully!")
+        print("File location:", file.name)
+
+
+
+save_data()
+
+
     
      
 
